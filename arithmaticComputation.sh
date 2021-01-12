@@ -16,7 +16,7 @@ for ((i=0; i <= $((${#arr[@]} - 1)); ++i))
         done
     done  
 
-	echo "Descending order = (${arr[@]})" 
+	echo "Ascending order = (${arr[@]})" 
 
 
 
