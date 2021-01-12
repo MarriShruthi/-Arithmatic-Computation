@@ -1,15 +1,22 @@
 #!/bin/bash -x 
 
-declare -A result
 
-result[1]="2"
-result[2]="4"
-result[3]="6"
-result[4]="8"
+arr=( 10 1 9 2 8 3 7 4 6 5 )
+for ((i=0; i <= $((${#arr[@]} - 1)); ++i))
+    do
+        for ((j=((i + 1)); j <= ((${#arr[@]})); ++j))
+        do
+            if [[ ${arr[i]} -lt ${arr[j]} ]]
+            then
+              
+                temp=${arr[i]}
+                arr[i]=${arr[j]}
+                arr[j]=$temp         
+            fi
+        done
+    done  
 
-arr=( ${result[1]} ${result[2]} ${result[3]} ${result[4]} )
-
-echo ${arr[@]}
+	echo "Descending order = (${arr[@]})" 
 
 
 
